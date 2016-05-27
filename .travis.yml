@@ -1,0 +1,22 @@
+sudo: required
+
+services:
+  - docker
+  
+before_install:
+  - docker build -t n42org/tox .
+  
+script:
+  - docker run --rm n42org/tox python2.3 -V
+  - docker run --rm n42org/tox python2.4 -V
+  - docker run --rm n42org/tox python2.5 --version
+  - docker run --rm n42org/tox python2.6 --version
+  - docker run --rm n42org/tox python2.7 --version
+  - docker run --rm n42org/tox python3.1 --version
+  - docker run --rm n42org/tox python3.2 --version
+  - docker run --rm n42org/tox python3.3 --version
+  - docker run --rm n42org/tox python3.4 --version
+  - docker run --rm n42org/tox python3.5 --version
+  - docker run --rm n42org/tox pypy --version
+  - docker run --rm n42org/tox pip --version
+  - docker run --rm n42org/tox tox --version
