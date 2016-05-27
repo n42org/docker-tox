@@ -3,6 +3,7 @@
 -	[`latest`, `2.3.1` (*Dockerfile*)](https://github.com/n42org/docker-tox/blob/latest/Dockerfile)
 
 [![](https://badge.imagelayers.io/n42org/tox:latest.svg)](https://imagelayers.io/?images=n42org/tox:latest)
+[![Build Status](https://travis-ci.org/n42org/docker-tox.svg?branch=master)](https://travis-ci.org/n42org/docker-tox)
 
 # What is Tox?
 
