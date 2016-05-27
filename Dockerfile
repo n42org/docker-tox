@@ -22,6 +22,7 @@ RUN apt-get update \
     python2.4-dev \
     python2.5-dev \
     python2.6-dev \
+    python2.7-dev \
     python3.1-dev \
     python3.2-dev \
     python3.3-dev \
@@ -31,6 +32,5 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | pypy
-RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python
-
+RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python2.7
 RUN pip install tox==$TOX_VERSION
