@@ -18,7 +18,7 @@ Tox is a generic virtualenv management and test command line tool you can use fo
 ### Create a `Dockerfile` in your project
 
 ```dockerfile
-FROM n42org/tox:latest
+FROM n42org/tox
 ```
 
 Then, run the commands to build and run the Docker image:
