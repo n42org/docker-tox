@@ -20,3 +20,6 @@ script:
   - docker run --rm n42org/tox pypy --version
   - docker run --rm n42org/tox pip --version
   - docker run --rm n42org/tox tox --version
+
+notifications:
+    email: false
