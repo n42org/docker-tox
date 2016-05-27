@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`latest` (*Dockerfile*)](https://github.com/n42org/docker-tox/blob/master/Dockerfile)
+-	[`latest`, `2.3.1` (*Dockerfile*)](https://github.com/n42org/docker-tox/blob/master/Dockerfile)
 
 [![](https://badge.imagelayers.io/n42org/tox:latest.svg)](https://imagelayers.io/?images=n42org/tox:latest)
 

@@ -1,5 +1,7 @@
 FROM ubuntu:trusty
 
+ENV TOX_VERSION 2.3.1
+
 RUN gpg --keyserver keyserver.ubuntu.com --recv-keys DB82666C \
  && gpg --export DB82666C | apt-key add -
 
@@ -16,7 +18,6 @@ RUN apt-get update \
  && apt-get install -y \
     git \
     curl \
-    python-pip \
     python2.3-dev \
     python2.4-dev \
     python2.5-dev \
@@ -30,5 +31,6 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | pypy
+RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python
 
-RUN pip install tox
+RUN pip install tox==$TOX_VERSION
