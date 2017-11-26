@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 
 ENV TOX_VERSION 2.3.1
 
@@ -8,10 +8,10 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 6A755776 \
   && gpg --export 68854915 | apt-key add -
 
 RUN printf '%s\n' \
-  'deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu trusty main' \
-  'deb-src http://ppa.launchpad.net/deadsnakes/ppa/ubuntu trusty main' \
-  'deb http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
-  'deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
+  'deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial main' \
+  'deb-src http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial main' \
+  'deb http://ppa.launchpad.net/pypy/ppa/ubuntu xenial main' \
+  'deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu xenial main' \
   | tee -a /etc/apt/sources.list >/dev/null
 
 RUN apt-get update \
