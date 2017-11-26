@@ -3,19 +3,19 @@ FROM ubuntu:trusty
 ENV TOX_VERSION 2.3.1
 
 RUN gpg --keyserver keyserver.ubuntu.com --recv-keys DB82666C \
- && gpg --export DB82666C | apt-key add -
+  && gpg --export DB82666C | apt-key add - \
+  && gpg --keyserver keyserver.ubuntu.com --recv-keys 68854915 \
+  && gpg --export 68854915 | apt-key add -
 
-RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 68854915 \
- && gpg --export 68854915 | apt-key add -
-
-RUN echo deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main >> /etc/apt/sources.list \
- && echo deb-src http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main >> /etc/apt/sources.list
-
-RUN echo deb http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main >> /etc/apt/sources.list \
- && echo deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main >> /etc/apt/sources.list
+RUN printf '%s\n' \
+  'deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main' \
+  'deb-src http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main' \
+  'deb http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
+  'deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
+  | tee -a /etc/apt/sources.list >/dev/null
 
 RUN apt-get update \
- && apt-get install -y \
+  && apt-get install -y \
     git \
     curl \
     python2.3-dev \
@@ -30,8 +30,9 @@ RUN apt-get update \
     python3.5-dev \
     python3.6-dev \
     pypy-dev \
- && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | pypy
-RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python2.7
-RUN pip install tox==$TOX_VERSION
+RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | pypy \
+  && curl -fsSL https://bootstrap.pypa.io/get-pip.py | python2.7 \
+  && pip install tox==$TOX_VERSION \
+  && rm -rf /root/.cache/pip
