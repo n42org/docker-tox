@@ -2,14 +2,14 @@ FROM ubuntu:trusty
 
 ENV TOX_VERSION 2.3.1
 
-RUN gpg --keyserver keyserver.ubuntu.com --recv-keys DB82666C \
-  && gpg --export DB82666C | apt-key add - \
+RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 6A755776 \
+  && gpg --export 6A755776 | apt-key add - \
   && gpg --keyserver keyserver.ubuntu.com --recv-keys 68854915 \
   && gpg --export 68854915 | apt-key add -
 
 RUN printf '%s\n' \
-  'deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main' \
-  'deb-src http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main' \
+  'deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu trusty main' \
+  'deb-src http://ppa.launchpad.net/deadsnakes/ppa/ubuntu trusty main' \
   'deb http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
   'deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main' \
   | tee -a /etc/apt/sources.list >/dev/null
