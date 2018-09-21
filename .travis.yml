@@ -18,6 +18,7 @@ script:
   - docker run --rm n42org/tox python3.4 --version
   - docker run --rm n42org/tox python3.5 --version
   - docker run --rm n42org/tox python3.6 --version
+  - docker run --rm n42org/tox python3.7 --version
   - docker run --rm n42org/tox pypy --version
   - docker run --rm n42org/tox pip --version
   - docker run --rm n42org/tox tox --version
