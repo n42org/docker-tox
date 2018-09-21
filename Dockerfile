@@ -29,6 +29,7 @@ RUN apt-get update \
     python3.4-dev \
     python3.5-dev \
     python3.6-dev \
+    python3.7-dev \
     pypy-dev \
   && rm -rf /var/lib/apt/lists/*
 
