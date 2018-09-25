@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-ENV TOX_VERSION 2.9.1
+ENV TOX_VERSION 3.4.0
 
 RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 6A755776 \
   && gpg --export 6A755776 | apt-key add - \

@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `2.9.1` (*Dockerfile*)](https://github.com/n42org/docker-tox/blob/latest/Dockerfile)
+-	[`latest`, `3.4.0` (*Dockerfile*)](https://github.com/n42org/docker-tox/blob/latest/Dockerfile)
 
 [![Build Status](https://travis-ci.org/n42org/docker-tox.svg?branch=master)](https://travis-ci.org/n42org/docker-tox) [![Docker Pulls](https://img.shields.io/docker/pulls/n42org/tox.svg)](https://hub.docker.com/r/n42org/tox/) [![](https://badge.imagelayers.io/n42org/tox:latest.svg)](https://imagelayers.io/?images=n42org/tox:latest)
 
@@ -39,7 +39,7 @@ $ docker run -it --rm --name my-tox-app -v "$PWD:/code" n42org/tox tox
 
 # License
 
-View [license information](https://bitbucket.org/hpk42/tox/src/default/LICENSE) for the software contained in this image.
+View [license information](https://github.com/tox-dev/tox/blob/master/LICENSE) for the software contained in this image.
 
 # Supported Docker versions
 
